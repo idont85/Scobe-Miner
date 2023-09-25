@@ -1,0 +1,24 @@
+#maindiv {
+    text-align: center;
+    vertical-align: center;
+    margin-top: 50%;
+    margin-left: 50%;
+}
+
+#main {
+    text-align: center;
+}
+
+#gain {
+    background-color: #f7c305;
+    border-color: #c79d04;
+    border-radius: 15px;
+    color: black;
+    border-width: 2px;
+    font-size: 30px;
+    font-family: 'Roboto Mono', monospace;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
