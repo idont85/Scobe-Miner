@@ -1,18 +1,77 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
-        <title>Scobe Miner</title>
-        <script src="index.js"></script>
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body onload="startUp()">
-        <div id="main">
-            <label id="counter">0</label>
-            <br>
-            <button id="gain" onclick="goClick()">Click to Farm Scobe</button>
-        </div>
-    </body>
+<head>
+  <link rel="icon" type="image/x-icon" href="scoob.png">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@500&family=Roboto+Mono:wght@600&display=swap" rel="stylesheet">
+  <title>Scobe Miner</title>
+  <script src="index.js"></script>
+  <link rel="stylesheet" href="index.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore-compat.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyCzmEtWZO2-d6JCy4GoBzOfdvdo52w0HN8",
+      authDomain: "scobe-miner.firebaseapp.com",
+      projectId: "scobe-miner",
+      storageBucket: "scobe-miner.appspot.com",
+      messagingSenderId: "1086615688423",
+      appId: "G-HNQ4FW8P9S"
+    };
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+  </script>
+</head>
+<body onload="startUp()">
+  <div id="button-container">
+    <button class="gen" onclick="resetScore()">Reset Score</button>
+    <button class="gen" onclick="exportSave()">Export Save</button>
+    <button class="gen" onclick="importSave()">Import Save</button>
+    <input class="gen" type="text" id="importInput" placeholder="Paste your save here">
+    <input class="gen" type="text" id="user" placeholder="Enter Username (DO NOT ABUSE. YOUR SCORE WILL BE RESET)">
+  </div>
+  <div id="counting">
+    <label id="counttheclicks">You have clicked 0 times</label>
+  </div>
+  <div id="main">
+    <label id="counter">0</label>
+    <br />
+    <div class="button-container">
+      <button id="gain" onclick="goClick()">Click to Farm Scobe</button>
+      <br />
+      <label id="clickcounter">You are making 0 scobes per click</label>
+    </div>
+    <br />
+    <img alt="" class="scoobies" src="scoobie.png" />
+  </div>
+  <div id="upgrades">
+    <button class="ub" id="bbb" onclick="getBb()">Better Biscuit. Price: 20 Scobes</button>
+    <button class="ub" id="bbd" onclick="getBd()">Big Biscuit. Price: 10000 Scobes</button>
+    <button class="ub" id="twomulti" onclick="addTwo()">Get a 2× multiplier for every click. Price: 2,000,000 Scobes</button>
+    <button class="ub" id="scoobie" onclick="getSc()">Buy Scoobie</button>
+    <button class="ub" id="scoble" onclick="buyScoble()">Buy Scoble. Price: 50,000</button>
+
+    <br>
+    <label class="counters" id="scobular">You have 0 Scoobies</label>
+  </div>
+  <!-- Place the leaderboard <div> here -->
+    <div id="leaderboard-container">
+      <h2>Leaderboard</h2>
+      <h3>Leaderboard is disabled for today due to innapropriate behavior. Sorry for the downtime.</h3>
+      <br>
+      <h3>Update has been rolled back by a day. Todays update will be reapplied tomorrow.</h3>
+      <br>
+      <h3>Scobles are NOT being saved today. <b>PLEASE EXPORT YOUR SAVE CODE.</b></h3>
+      <ol id="leaderboard-list">
+        <!-- Leaderboard entries will be inserted here -->
+      </ol>
+    </div>
+  <div id="footnote">
+    Coded by Mustafa Azhar for you all!
+  </div>
+</body>
 </html>
