@@ -13,6 +13,7 @@ var fourx = 0; // Added the fourx multiplier
 var multiplier = 1;
 var amountperclick = 0;
 var scobleprice = 0;
+var scoobers = 0;
 
 // Your Firebase initialization code here
 
@@ -22,6 +23,7 @@ function startUp() {
   var bbornot = localStorage.getItem('bb') || 0; // Initialize to 0 if not found
   var bdd = +localStorage.getItem('bbd') || 0; // Initialize to 0 if not found
   var scoobieCount = +localStorage.getItem('scoobie') || 0; // Initialize to 0 if not found
+  scoobers = +localStorage.getItem('scoobers') || 0 // Scoober Count
   twox = +localStorage.getItem('2xmulti') || 0;
   fourx = +localStorage.getItem('4xmulti') || 0; // Added initialization for the fourx multiplier
   scobles = +localStorage.getItem('scobles') || 0;
@@ -30,7 +32,8 @@ function startUp() {
   counter = initial;
   counttheclicks = +localStorage.getItem('counttheclicks') || 0;
   document.getElementById('counttheclicks').innerHTML = 'You have clicked ' + counttheclicks + ' times';
-  
+  document.getElementById('scooberc').innerHTML = 'You have ' + scoobers + ' scoobing machines';
+
   if (fourx == 1) {
     multiplier = 4;
   } else {
@@ -62,6 +65,8 @@ function startUp() {
   document.getElementById('scoobie').innerHTML = 'Scoobie. Price: ' + scoobprice;
   bd = bdd;
   scobleprice = Math.ceil(scobles ** 2.1 + 50000);
+  scooberprice = Math.ceil(scoobers ** 9.5 + 10000000000);
+  document.getElementById('sm').innerHTML = 'Buy Scoobing Machine. Price: ' + abbreviate_number(scooberprice, 0)
   document.getElementById('scoble').innerHTML = 'Buy Scoble. Price: ' + scobleprice;
 
   var sps = countScobe();
@@ -74,6 +79,19 @@ function playAudio() {
   audio.volume = 0.24;
   audio.currentTime = 0;
   audio.play();
+}
+
+
+abbreviate_number = function(num, fixed) {
+  if (num === null) { return null; } // terminate early
+  if (num === 0) { return '0'; } // terminate early
+  fixed = (!fixed || fixed < 0) ? 0 : fixed; // number of decimal places to show
+  var b = (num).toPrecision(2).split("e"), // get power
+      k = b.length === 1 ? 0 : Math.floor(Math.min(b[1].slice(1), 14) / 3), // floor at decimals, ceiling at trillions
+      c = k < 1 ? num.toFixed(0 + fixed) : (num / Math.pow(10, k * 3) ).toFixed(1 + fixed), // divide by power
+      d = c < 0 ? c : Math.abs(c), // enforce -0 is 0
+      e = d + ['', 'K', 'M', 'B', 'T'][k]; // append power
+  return e;
 }
 
 function goClick() {
@@ -228,6 +246,7 @@ function exportSave() {
     scobles: scobles,
     twoxmulti: twox, // Save the twox variable
     fourxmulti: fourx, // Save the fourx variable
+    scoobers: scoobers,
   };
 
   // Convert the object to a JSON string and encrypt it
@@ -256,6 +275,7 @@ function importSave() {
     scobles = saveData.scobles || 0;
     twox = saveData.twoxmulti || 0; // Update the twox variable
     fourx = saveData.fourxmulti || 0; // Update the fourx variable
+    scoobers = saveData.scoobers || 0;
 
     // Update the game UI to reflect the imported data
     document.getElementById("counter").innerHTML = counter;
@@ -287,6 +307,7 @@ function importSave() {
     localStorage.setItem("counttheclicks", counttheclicks);
     localStorage.setItem("2xmulti", twox); // Save the twox variable
     localStorage.setItem('4xmulti', fourx); // Save the fourx variable
+    localStorage.setItem('scoobers', scoobers)
 
     // Save the scobles variable
     localStorage.setItem("scobles", scobles);
@@ -354,7 +375,7 @@ function updateLeaderboard() {
 setInterval(function() {
   console.log('firing')
   var currentTime = new Date();
-  var fiveMinutesInMilliseconds = 3 * 60 * 1000;
+  var fiveMinutesInMilliseconds = 4 * 60 * 1000;
 
   if (currentTime - pageLoadTime >= fiveMinutesInMilliseconds) {
     updateLeaderboard();
@@ -517,7 +538,7 @@ function buy4xMultiplier() {
 
 function filterUsername() {
   var usernameInput = document.getElementById('user');
-  var forbiddenWords = ['fuck', 'ass', 'shit', 'bitch', 'nigger', 'dick', 'motherfucker', 'cock', 'fucker', 'asscock', 'penis','shoot', 'shot', 'shooter', 'bullshit', 'fucker', 'niger', 'asshole', 'nig', 'cock',]; // Add your forbidden words to this array
+  var forbiddenWords = ['fuck', 'ass', 'shit', 'bitch', 'nigger', 'dick', 'motherfucker', 'cock', 'fucker', 'asscock', 'penis','shoot', 'shot', 'shooter', 'bullshit', 'fucker', 'niger', 'asshole', 'nig', 'cock', 'cake', 'ahh', 'baddie', 'panty', 'pantry', 'showing']; // Add your forbidden words to this array
 
   var sanitizedUsername = usernameInput.value.trim().toLowerCase();
   
@@ -555,3 +576,45 @@ function updateScoreCounter(score) {
   scoreCounter.textContent = `${score}`;
 }
 
+function getScoober() {
+  counter = +localStorage.getItem('clicks')
+  if (counter >= scooberprice) {
+    counter = counter - scooberprice
+    scoobers = scoobers + 1
+    localStorage.setItem('scoobers', scoobers)
+    localStorage.setItem('clicks', counter)
+    document.getElementById('scooberc').innerHTML = 'You have ' + scoobers + ' scoobing machines';
+    scooberprice = Math.ceil(scoobers ** 8 + 10000000000)
+    document.getElementById('sm').innerHTML = 'Buy Scoobing Machine. Price: ' + abbreviate_number(scooberprice, 0)
+    alert("A scoobing machine is now working for you.");
+  } else {
+    alert("meanie. You don't have enough scobes")
+  }
+}
+
+setInterval(function() {
+  var scooberpersecond = scoobers * 200000000;
+  counter = counter + scooberpersecond;
+  document.getElementById('counter').innerHTML = counter;
+  localStorage.setItem('clicks', counter);
+  updateScoreCounter(+localStorage.getItem('clicks'))
+}, 2000);
+
+function clearLeaderboard() {
+  var password = prompt("Enter password to clear leaderboard:")
+  if (password == 'scobies19') {
+    db.collection("leaderboard")
+      .get()
+      .then(res => {
+        res.forEach(element => {
+          element.ref.delete();
+        });
+  });
+  } else {
+    alert("Incorrect Password/Canceled")
+  }
+}
+
+function moveOver() {
+  window.location.href = "changelog.html";
+}
