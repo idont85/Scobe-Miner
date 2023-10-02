@@ -10,6 +10,7 @@
   <title>Scobe Miner</title>
   <script src="index.js"></script>
   <link rel="stylesheet" href="index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-firestore-compat.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
@@ -32,7 +33,7 @@
     <button class="gen" onclick="exportSave()">Export Save</button>
     <button class="gen" onclick="importSave()">Import Save</button>
     <input class="gen" type="text" id="importInput" placeholder="Paste your save here">
-    <input class="gen" type="text" id="user" placeholder="Enter Username (DO NOT ABUSE. YOUR SCORE WILL BE RESET)">
+    <input class="gen" type="text" oninput="filterUsername()" id="user" placeholder="Enter Username (DO NOT ABUSE. YOUR SCORE WILL BE RESET)">
   </div>
   <div id="counting">
     <label id="counttheclicks">You have clicked 0 times</label>
@@ -51,26 +52,26 @@
   <div id="upgrades">
     <button class="ub" id="bbb" onclick="getBb()">Better Biscuit. Price: 20 Scobes</button>
     <button class="ub" id="bbd" onclick="getBd()">Big Biscuit. Price: 10000 Scobes</button>
-    <button class="ub" id="twomulti" onclick="addTwo()">Get a 2× multiplier for every click. Price: 2,000,000 Scobes</button>
+    <button class="ub" id="twomulti" onclick="addTwo()">Get a 2× multiplier for every click. Price: 6,000,000 Scobes</button>
+    <button class="ub" id="fourmulti" onclick="buy4xMultiplier()">Get a 4x multiplier for every click. Price: 5,000,000,000 Scobes</button>
     <button class="ub" id="scoobie" onclick="getSc()">Buy Scoobie</button>
     <button class="ub" id="scoble" onclick="buyScoble()">Buy Scoble. Price: 50,000</button>
 
     <br>
-    <label class="counters" id="scobular">You have 0 Scoobies</label>
+    <div id="counters-container">
+      <label class="counters" id="scobular">You have 0 Scoobies</label>
+      <label class="counters" id="scoble-counter">You have 0 Scobles</label>
+  </div>
   </div>
   <!-- Place the leaderboard <div> here -->
-    <div id="leaderboard-container">
-      <h2>Leaderboard</h2>
-      <h3>Leaderboard is disabled for today due to innapropriate behavior. Sorry for the downtime.</h3>
-      <br>
-      <h3>Update has been rolled back by a day. Todays update will be reapplied tomorrow.</h3>
-      <br>
-      <h3>Scobles are NOT being saved today. <b>PLEASE EXPORT YOUR SAVE CODE.</b></h3>
+    <div id="leaderboard-container">  
+          <h2>Leaderboard</h2>
       <ol id="leaderboard-list">
         <!-- Leaderboard entries will be inserted here -->
       </ol>
     </div>
   <div id="footnote">
+    <button id="changelog">v3.4</button>
     Coded by Mustafa Azhar for you all!
   </div>
 </body>
