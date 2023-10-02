@@ -101,13 +101,11 @@
 }
 
 #scobular {  
-    position: absolute;
-    bottom: 0;
-    text-align: center;
-    padding-bottom: 20px;
-    font-size: 130%;
-    color: gray;
-    font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-size: inherit;
+  color: gray;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 20px; /* Add space between Scobular and counters */
 }
 
 #clickcounter {
@@ -128,6 +126,8 @@
     padding: 10px; /* Add padding for better readability */
     border-radius: 20px;
     font-family: 'Poppins', sans-serif;
+    vertical-align: middle;
+
 }
 
 #counttheclicks {
@@ -192,21 +192,23 @@
 
 
 #leaderboard-container {
-    background-color: #f2f2f2;
-    width: 25%;
-    min-height: 60vh;
-    border-radius: 10px;
-    text-align: center;
-    padding: 20px;
-    margin: 20px 10px; /* Adjust the margin to create space around the leaderboard */
-    position: absolute;
-    top: 50px;
-    right: 10px;
-    z-index: 1000;
-    float: right;
-    font-family: 'Lato', sans-serif;
-  }
-  
+  background-color: #f2f2f2;
+  width: 25%;
+  min-height: 60vh;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  margin: 20px 10px; /* Adjust the margin to create space around the leaderboard */
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  z-index: 1000;
+  float: right;
+  font-family: 'Lato', sans-serif;
+  /* Add the following styles for scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 75vh; /* Set a maximum height to enable scrolling when content exceeds this height */
+}
   /* Rest of the CSS styles remain the same */
   
   
@@ -260,4 +262,36 @@
 
 #twomulti {
   font-size: 80%;
+}
+
+#fourmulti {
+  font-size: 80%;
+}
+
+.counters {
+  font-size: 18px;
+  color: gray;
+  font-family: 'Roboto', sans-serif;
+  margin: 5px 0; /* Add space between counters */
+}
+
+#counters-container {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 130%;
+  font-family: 'Roboto', sans-serif;
+}
+
+#changelog {
+  float: left;
+  font-family: 'Share Tech Mono', monospace;
+  background-color: inherit;
+  border: none;
+  font-size: 17px;
+
 }
