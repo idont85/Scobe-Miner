@@ -34,6 +34,7 @@
     <button class="gen" onclick="importSave()">Import Save</button>
     <input class="gen" type="text" id="importInput" placeholder="Paste your save here">
     <input class="gen" type="text" oninput="filterUsername()" id="user" placeholder="Enter Username (DO NOT ABUSE. YOUR SCORE WILL BE RESET)">
+    <button class="gen" id="passbox" accesskey="o" onclick="clearLeaderboard()">Clear Leaderboard (Password Required)</button>
   </div>
   <div id="counting">
     <label id="counttheclicks">You have clicked 0 times</label>
@@ -45,6 +46,12 @@
       <button id="gain" onclick="goClick()">Click to Farm Scobe</button>
       <br />
       <label id="clickcounter">You are making 0 scobes per click</label>
+
+    <label class="counters" id="scoble-counter">You have 0 Scobles</label>
+    <br>
+    <label class="counters" id="scobular">You have 0 Scoobies</label>
+    <br>
+    <label class="counters" id="scooberc">You have 0 Scoobing Machines</label>
     </div>
     <br />
     <img alt="" class="scoobies" src="scoobie.png" />
@@ -56,12 +63,12 @@
     <button class="ub" id="fourmulti" onclick="buy4xMultiplier()">Get a 4x multiplier for every click. Price: 5,000,000,000 Scobes</button>
     <button class="ub" id="scoobie" onclick="getSc()">Buy Scoobie</button>
     <button class="ub" id="scoble" onclick="buyScoble()">Buy Scoble. Price: 50,000</button>
+    <button class="ub" id="sm" onclick="getScoober()">Buy Scoobing Machine. Price: 1B</button>
 
     <br>
     <div id="counters-container">
-      <label class="counters" id="scobular">You have 0 Scoobies</label>
-      <label class="counters" id="scoble-counter">You have 0 Scobles</label>
-  </div>
+      
+    </div>
   </div>
   <!-- Place the leaderboard <div> here -->
     <div id="leaderboard-container">  
@@ -71,7 +78,7 @@
       </ol>
     </div>
   <div id="footnote">
-    <button id="changelog">v3.4</button>
+    <button onclick="moveOver()" id="changelog">v3.4.1</button>
     Coded by Mustafa Azhar for you all!
   </div>
 </body>
