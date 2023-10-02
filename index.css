@@ -1,297 +1,309 @@
 
 
 #main {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    margin-top: 20px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin-top: 20px;
 }
 
 #gain {
-    background-color: #f7c305;
-    border-color: #c79d04;
-    border-radius: 15px;
-    color: black;
-    border-width: 2px;
-    font-size: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    -moz-transition: all .2s ease-in;
-    -o-transition: all .2s ease-in;
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;
+  background-color: #f7c305;
+  border-color: #c79d04;
+  border-radius: 15px;
+  color: black;
+  border-width: 2px;
+  font-size: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
 }
 
 #gain:hover {
-    background-color: #c79d04;
+  background-color: #c79d04;
 }
 
 #counter {
-    font-family: 'Martian Mono', monospace;
-    font-size: 70px;
+  font-family: 'Martian Mono', monospace;
+  font-size: 70px;
 }
 
 #upgradelist {
-    list-style-type:none;
+  list-style-type:none;
 }
 
 #upgrades {
-    background-color: #8bf57f;
-    width: 25%;
-    height: 80vh;
-    border-radius: 30px;
-    text-align:center;
-    padding-top: 5px;
-    margin-top: 15px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: #8bf57f;
+  width: 25%;
+  height: 80vh;
+  border-radius: 30px;
+  text-align:center;
+  padding-top: 5px;
+  margin-top: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
 }
 
 .ub {
-    padding: 4px;
-    margin-bottom: 10px;
-    border-color: #169405;
-    border-radius: 20px;
-    width: 80%;
-    height: 10%;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 100%;
-    background-color: 	#4d9405;
-    color: white;
-    -moz-transition: all .2s ease-in;
-    -o-transition: all .2s ease-in;
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;
-    margin-top: 8px;
+  padding: 4px;
+  margin-bottom: 10px;
+  border-color: #169405;
+  border-radius: 20px;
+  width: 80%;
+  height: 10%;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 100%;
+  background-color: 	#4d9405;
+  color: white;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  margin-top: 8px;
 }
 
 .ub:hover {
-    background-color: white;
-    color: #169405;
+  background-color: white;
+  color: #169405;
 }
 
 .scoobies {
-    height: 9%;
-    width: 19%;
-    margin: 20px;
+  height: 9%;
+  width: 19%;
+  margin: 20px;
 }
 
 .gen {
-    border-radius: 10px;
-    border-color: #ff1a1a;
-    background-color: #ff9999;
-    height: 20%;
-    width: 20%;
-    -moz-transition: all .2s ease-in;
-    -o-transition: all .2s ease-in;
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;
+  border-radius: 10px;
+  border-color: #ff1a1a;
+  background-color: #ff9999;
+  height: 20%;
+  width: 20%;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
 }
 
 .gen:hover {
-    background-color: red;
+  background-color: red;
 }
 
-#scobular {  
-  text-align: center;
-  font-size: inherit;
-  color: gray;
-  font-family: 'Roboto', sans-serif;
-  margin-top: 20px; /* Add space between Scobular and counters */
-}
+
 
 #clickcounter {
-    display: block; /* Ensure it's displayed as a block element */
-    margin-top: 20px; /* Adjust the margin to control the vertical space */
-    text-align: center;
-    font-size: 18px;
-    color: gray;
-    font-family: 'Roboto', sans-serif;
+  display: block; /* Ensure it's displayed as a block element */
+  margin-top: 20px; /* Adjust the margin to control the vertical space */
+  text-align: center;
+  font-size: 18px;
+  color: gray;
+  font-family: 'Roboto', sans-serif;
 }
 
 #footnote {
-    position: fixed; /* Fixed positioning to keep it at the bottom */
-    bottom: 0; /* Place it at the bottom of the viewport */
-    text-align: center; /* Center the text horizontally */
-    background-color: #d4d0d0; /* Background color for the footnote */
-    width: 97%; /* Make it full-width */
-    padding: 10px; /* Add padding for better readability */
-    border-radius: 20px;
-    font-family: 'Poppins', sans-serif;
-    vertical-align: middle;
+  position: fixed; /* Fixed positioning to keep it at the bottom */
+  bottom: 0; /* Place it at the bottom of the viewport */
+  text-align: center; /* Center the text horizontally */
+  background-color: #d4d0d0; /* Background color for the footnote */
+  width: 97%; /* Make it full-width */
+  padding: 10px; /* Add padding for better readability */
+  border-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+  vertical-align: middle;
 
 }
 
 #counttheclicks {
-    font-family: 'Manrope', sans-serif;
-    margin-bottom: 50px;
+  font-family: 'Manrope', sans-serif;
+  margin-bottom: 50px;
 }
 
 #counting {
-    float: right;
-    top: 0px;
-    right: 0px;
+  float: right;
+  top: 0px;
+  right: 0px;
 }
 
 /* Add this CSS to your existing styles in index.css */
 
 #button-container {
-    text-align: center;
-    position: relative;
-    top: 0;
-    transition: top 0.5s ease; /* Add a smooth transition effect */
-  }
-  
-  .gen {
-    border-radius: 10px;
-    border-color: #ff1a1a;
-    background-color: #ff9999;
-    height: 20%;
-    width: 15%;
-    margin: 5px; /* Add a small margin between buttons */
-    opacity: 0; /* Initially hide the buttons */
-    transform: translateY(-20px); /* Move the buttons up */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Add a smooth transition effect */
-  }
-  
-  /* Hover effect for buttons */
-  .gen:hover {
-    background-color: red;
-  }
-  
-  /* Show the buttons when they are active */
-  #button-container.active {
-    top: 0;
-  }
-  
-  #button-container.active .gen {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  text-align: center;
+  position: relative;
+  top: 0;
+  transition: top 0.5s ease; /* Add a smooth transition effect */
+}
+
+.gen {
+  border-radius: 10px;
+  border-color: #ff1a1a;
+  background-color: #ff9999;
+  height: 20%;
+  width: 12%;
+  margin: 5px; /* Add a small margin between buttons */
+  opacity: 0; /* Initially hide the buttons */
+  transform: translateY(-20px); /* Move the buttons up */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Add a smooth transition effect */
+}
+
+/* Hover effect for buttons */
+.gen:hover {
+  background-color: red;
+}
+
+/* Show the buttons when they are active */
+#button-container.active {
+  top: 0;
+}
+
+#button-container.active .gen {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 #importInput {
-    opacity: 0.8;
-    border-radius: 10px;
-    border-color: #ff1a1a;
-    background-color: lightblue;
-    height: 20%;
-    width: 20%;
-    margin: 5px; /* Add a small margin between buttons */
-    opacity: 0; /* Initially hide the buttons */
-    transform: translateY(-20px); /* Move the buttons up */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Add a smooth transition effect */
+  opacity: 0.8;
+  border-radius: 10px;
+  border-color: #ff1a1a;
+  background-color: lightblue;
+  height: 20%;
+  width: 20%;
+  margin: 5px; /* Add a small margin between buttons */
+  opacity: 0; /* Initially hide the buttons */
+  transform: translateY(-20px); /* Move the buttons up */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Add a smooth transition effect */
 }
 
 
 #leaderboard-container {
-  background-color: #f2f2f2;
-  width: 25%;
-  min-height: 60vh;
-  border-radius: 10px;
-  text-align: center;
-  padding: 20px;
-  margin: 20px 10px; /* Adjust the margin to create space around the leaderboard */
-  position: absolute;
-  top: 50px;
-  right: 10px;
-  z-index: 1000;
-  float: right;
-  font-family: 'Lato', sans-serif;
-  /* Add the following styles for scrolling */
-  overflow-y: auto; /* Enable vertical scrolling */
-  max-height: 75vh; /* Set a maximum height to enable scrolling when content exceeds this height */
+background-color: #f2f2f2;
+width: 25%;
+min-height: 60vh;
+border-radius: 10px;
+text-align: center;
+padding: 20px;
+margin: 20px 10px; /* Adjust the margin to create space around the leaderboard */
+position: absolute;
+top: 50px;
+right: 10px;
+z-index: 1000;
+float: right;
+font-family: 'Lato', sans-serif;
+/* Add the following styles for scrolling */
+overflow-y: auto; /* Enable vertical scrolling */
+max-height: 75vh; /* Set a maximum height to enable scrolling when content exceeds this height */
 }
-  /* Rest of the CSS styles remain the same */
-  
-  
-  #leaderboard-container h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  #leaderboard-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-  }
-  
-  #leaderboard-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px;
-    background-color: #fff;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  #leaderboard-list .username {
-    flex: 1;
-    font-weight: bold;
-  }
-  
-  #leaderboard-list .score {
-    flex: 1;
-    text-align: right;
-  }
-  
-  #leaderboard-list li:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
-  #leaderboard-list li:hover {
-    background-color: #e0e0e0;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
+/* Rest of the CSS styles remain the same */
+
+
+#leaderboard-container h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#leaderboard-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+#leaderboard-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#leaderboard-list .username {
+  flex: 1;
+  font-weight: bold;
+}
+
+#leaderboard-list .score {
+  flex: 1;
+  text-align: right;
+}
+
+#leaderboard-list li:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#leaderboard-list li:hover {
+  background-color: #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
 #user {
-    font-size: 10px;
+  font-size: 10px;
 }
 
 #twomulti {
-  font-size: 80%;
+font-size: 80%;
 }
 
 #fourmulti {
-  font-size: 80%;
+font-size: 76%;
 }
 
 .counters {
-  font-size: 18px;
-  color: gray;
-  font-family: 'Roboto', sans-serif;
-  margin: 5px 0; /* Add space between counters */
+font-size: 18px;
+color: gray;
+font-family: 'Roboto', sans-serif;
+margin: 5px 0; /* Add space between counters */
 }
 
 #counters-container {
-  position: absolute;
-  bottom: 0;
-  text-align: center;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 130%;
-  font-family: 'Roboto', sans-serif;
+position: absolute;
+bottom: 0;
+text-align: center;
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+font-size: 130%;
+font-family: 'Roboto', sans-serif;
 }
 
 #changelog {
-  float: left;
-  font-family: 'Share Tech Mono', monospace;
-  background-color: inherit;
-  border: none;
-  font-size: 17px;
+float: left;
+font-family: 'Share Tech Mono', monospace;
+background-color: inherit;
+border: none;
+font-size: 17px;
 
+}
+
+.uc {
+  display: block; /* Ensure it's displayed as a block element */
+  margin-top: 20px; /* Adjust the margin to control the vertical space */
+  text-align: center;
+  font-size: 18px;
+  color: gray;
+  font-family: 'Roboto', sans-serif;
+}
+
+#passbox {
+  width: 20%;
+}
+
+#listy {
+  list-style-type: square;
 }
