@@ -422,7 +422,7 @@ function populateLeaderboard() {
         var listItem = document.createElement("li");
         listItem.innerHTML = `
           <span class="username">${entry.username}</span>
-          <span class="score">${entry.score} Scobes</span>
+          <span class="score">${abbreviate_number(entry.score)} Scobes</span>
         `;
 
         leaderboardList.appendChild(listItem);
